@@ -1,0 +1,113 @@
+{
+ "C0 original": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2
+  },
+  "hv_mean": 0.3919790421563767,
+  "hv_std": 0.04085804456175249,
+  "igd_mean": 0.13583119819001688,
+  "igd_std": 0.017817513709219326
+ },
+ "C1 a_max=1": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2,
+   "a_max": 1.0
+  },
+  "hv_mean": 0.5460732121713774,
+  "hv_std": 0.04805625807227882,
+  "igd_mean": 0.06914876956813383,
+  "igd_std": 0.01804807576760304
+ },
+ "C2 TL-guided search": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2,
+   "tl_search": true
+  },
+  "hv_mean": 0.41649280374975894,
+  "hv_std": 0.03376568938328773,
+  "igd_mean": 0.1218209496159208,
+  "igd_std": 0.01497669511819834
+ },
+ "C3 adaptive p_TL": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2,
+   "adaptive_ptl": true
+  },
+  "hv_mean": 0.44005767306790744,
+  "hv_std": 0.06999290317520017,
+  "igd_mean": 0.11436309638991574,
+  "igd_std": 0.03194940417292519
+ },
+ "C4 adaptive + TL search": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2,
+   "adaptive_ptl": true,
+   "tl_search": true
+  },
+  "hv_mean": 0.4363236933907453,
+  "hv_std": 0.042040258435709146,
+  "igd_mean": 0.11675394323872954,
+  "igd_std": 0.017264049724182478
+ },
+ "C5 adaptive + a_max=1": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2,
+   "adaptive_ptl": true,
+   "a_max": 1.0
+  },
+  "hv_mean": 0.5252060936345173,
+  "hv_std": 0.09643030034278428,
+  "igd_mean": 0.07747748547116085,
+  "igd_std": 0.03560039854120642
+ },
+ "C6 adaptive + TL search + decaying refinement": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2,
+   "adaptive_ptl": true,
+   "tl_search": true,
+   "loc_decay": true
+  },
+  "hv_mean": 0.3873450530631567,
+  "hv_std": 0.03722951337168329,
+  "igd_mean": 0.15251006472117135,
+  "igd_std": 0.022703830025266453
+ },
+ "C7 adaptive (p0=0.3) + TL search": {
+  "cfg": {
+   "p_tl": 0.3,
+   "tau_c": 1.0,
+   "tau_d": 0.2,
+   "adaptive_ptl": true,
+   "tl_search": true
+  },
+  "hv_mean": 0.41035598661380956,
+  "hv_std": 0.06196549095197259,
+  "igd_mean": 0.12929291501104984,
+  "igd_std": 0.02433777221024705
+ },
+ "TL-only (reference)": {
+  "cfg": {
+   "p_tl": 0.1,
+   "tau_c": 1.0,
+   "tau_d": 0.2
+  },
+  "hv_mean": 0.47463246360407796,
+  "hv_std": 0.08911487879602333,
+  "igd_mean": 0.11849044568898479,
+  "igd_std": 0.02517353179325866
+ }
+}

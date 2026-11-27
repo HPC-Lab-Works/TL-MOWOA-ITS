@@ -12,11 +12,14 @@ REF = ALGS[0]          # algorithm against which the Wilcoxon tests are made
 PLOT = sys.argv[4].split(",") if len(sys.argv) > 4 else ALGS   # algorithms shown in figures
 LABEL = {"TL-MOWOA": "TL-MOWOA ($a_{max}$=2, original)", "TL-MOWOA-v2": "TL-MOWOA", "MOWOA": "MOWOA",
          "MOWOA-a1": "MOWOA ($a_{max}$=1)", "NSGA-III": "NSGA-III", "TL": "TL algorithm",
-         "Hybrid": "Hybrid (TL init + MOWOA)", "Hybrid-a1": "Hybrid ($a_{max}$=1)", "GNN": "GCN-surrogate EA"}
+         "Hybrid": "Hybrid (TL init + MOWOA)", "Hybrid-a1": "Hybrid ($a_{max}$=1)", "GNN": "GCN-surrogate EA",
+         "C-TAEA": "C-TAEA", "CCMO": "CCMO", "AGE-MOEA-II": "AGE-MOEA-II", "CMOPSO": "CMOPSO"}
 SHORT = {"TL-MOWOA": "TL-MOWOA\na=2", "TL-MOWOA-v2": "TL-MOWOA", "MOWOA": "MOWOA", "MOWOA-a1": "MOWOA\na=1",
-         "NSGA-III": "NSGA-III", "TL": "TL", "Hybrid": "Hybrid", "Hybrid-a1": "Hybrid\na=1", "GNN": "GCN-EA"}
+         "NSGA-III": "NSGA-III", "TL": "TL", "Hybrid": "Hybrid", "Hybrid-a1": "Hybrid\na=1", "GNN": "GCN-EA",
+         "C-TAEA": "C-TAEA", "CCMO": "CCMO", "AGE-MOEA-II": "AGE-\nMOEA-II", "CMOPSO": "CMOPSO"}
 COL = {"TL-MOWOA-v2": "#1F5FAD", "TL-MOWOA": "#6FA8DC", "MOWOA": "#E8833A", "MOWOA-a1": "#B8860B",
-       "NSGA-III": "#3A9D5D", "TL": "#C8435A", "Hybrid": "#8B6CC7", "Hybrid-a1": "#5E3C99", "GNN": "#7A7A7A"}
+       "NSGA-III": "#3A9D5D", "TL": "#C8435A", "Hybrid": "#8B6CC7", "Hybrid-a1": "#5E3C99", "GNN": "#7A7A7A",
+       "C-TAEA": "#0F9D9A", "CCMO": "#D4A017", "AGE-MOEA-II": "#A0522D", "CMOPSO": "#E377C2"}
 R = {a: sorted([pickle.load(open(f, "rb")) for f in glob.glob(f"{RUNS}/{a}_*.pkl")], key=lambda r: r["seed"])
      for a in ALGS}
 n_runs = {a: len(R[a]) for a in ALGS}

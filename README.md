@@ -75,3 +75,15 @@ TL-MOWOA using a two-sided Wilcoxon rank-sum test (α = 0.05).
 * `raw_runs/` holds zipped per-run archives and per-generation fronts (pickle):
   `raw_runs_round1.zip`, `raw_runs_round2.zip`, and `source_tasks.zip` (the
   historical source optimization data D_s). Unzip before running `analyze.py`.
+
+## State-of-the-art comparators (added November 2026)
+`sota.py` adds C-TAEA, AGE-MOEA-II and CMOPSO (pymoo 0.6.2 implementations) and
+CCMO (implemented here following Tian et al., IEEE TEVC 2021). They were run on
+the confirmatory seeds 31–60 after the confirmatory round; TL-MOWOA was not changed.
+```bash
+python run.py out/source.pkl out/runs C-TAEA,AGE-MOEA-II,CMOPSO,CCMO 31-60 '{"p_tl": 0.1, "tau_c": 1.0, "tau_d": 0.2}'
+python analyze.py out/runs out/analysis TL-MOWOA-v2,TL-MOWOA,MOWOA,MOWOA-a1,Hybrid,Hybrid-a1,TL,NSGA-III,GNN,C-TAEA,CCMO,AGE-MOEA-II,CMOPSO TL-MOWOA-v2,TL,Hybrid,MOWOA,C-TAEA,CMOPSO,CCMO
+python ../sumo_validation/validate.py out/runs out/analysis/curves.pkl out/sumo.json 31-40 TL-MOWOA-v2,TL-MOWOA,MOWOA,Hybrid,TL,NSGA-III,GNN,C-TAEA,CCMO,AGE-MOEA-II,CMOPSO
+```
+Results (all 13 algorithms on one reference front): `results/round2_with_sota_comparators/`;
+raw runs of the new comparators: `raw_runs/raw_runs_round2_sota.zip`. AGE-MOEA-II requires `numba`.

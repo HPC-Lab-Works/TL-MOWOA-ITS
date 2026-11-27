@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{Final performance over 30 independent runs on the confirmatory seeds (mean $\pm$ standard deviation). Superscripts give the outcome of a two-sided Wilcoxon rank-sum test ($\alpha=0.05$) of TL-MOWOA against each algorithm: $^{+}$ TL-MOWOA significantly better, $^{-}$ significantly worse, $^{\approx}$ no significant difference. IGD and spread are computed over runs with at least one feasible solution ($n$ given where fewer than 30); runs without a feasible solution contribute HV $=0$.}
+\label{tab:metrics}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\hline
+\textbf{Algorithm} & \textbf{Feasible runs} & \textbf{HV $\uparrow$} & \textbf{IGD $\downarrow$} & \textbf{Spread $\downarrow$} & \textbf{Pareto size $\uparrow$} \\
+\hline
+\textbf{TL-MOWOA (proposed)} & 30/30 & \textbf{0.290 $\pm$ 0.045} & \textbf{0.161 $\pm$ 0.027} & \textbf{0.637 $\pm$ 0.051} & \textbf{100.0 $\pm$ 0.0} \\
+TL-MOWOA, $a_{max}=2$ & 30/30 & 0.230 $\pm$ 0.043$^{+}$ & 0.211 $\pm$ 0.025$^{+}$ & 0.742 $\pm$ 0.051$^{+}$ & 95.5 $\pm$ 7.2$^{-}$ \\
+MOWOA & 30/30 & 0.178 $\pm$ 0.052$^{+}$ & 0.296 $\pm$ 0.073$^{+}$ & 0.878 $\pm$ 0.049$^{+}$ & 75.7 $\pm$ 21.8$^{+}$ \\
+MOWOA, $a_{max}=1$ & 30/30 & 0.193 $\pm$ 0.063$^{+}$ & 0.287 $\pm$ 0.066$^{+}$ & 0.873 $\pm$ 0.060$^{+}$ & 91.4 $\pm$ 15.2$^{-}$ \\
+Hybrid & 30/30 & 0.195 $\pm$ 0.039$^{+}$ & 0.243 $\pm$ 0.030$^{+}$ & 0.793 $\pm$ 0.049$^{+}$ & 94.8 $\pm$ 7.9$^{-}$ \\
+Hybrid, $a_{max}=1$ & 30/30 & 0.214 $\pm$ 0.041$^{+}$ & 0.219 $\pm$ 0.030$^{+}$ & 0.721 $\pm$ 0.065$^{+}$ & 99.5 $\pm$ 2.7$^{\approx}$ \\
+TL algorithm & 30/30 & 0.246 $\pm$ 0.026$^{+}$ & 0.200 $\pm$ 0.015$^{+}$ & 0.765 $\pm$ 0.040$^{+}$ & 89.2 $\pm$ 8.8$^{+}$ \\
+NSGA-III & 12/30 & 0.049 $\pm$ 0.083$^{+}$ & 0.424 $\pm$ 0.198 ($n$=12)$^{+}$ & 0.874 $\pm$ 0.061 ($n$=12)$^{+}$ & 10.7 $\pm$ 16.3$^{+}$ \\
+GCN-EA & 2/30 & 0.000 $\pm$ 0.001$^{+}$ & 0.944 $\pm$ 0.002 ($n$=2)$^{+}$ & 0.977 $\pm$ 0.000 ($n$=1) & 0.2 $\pm$ 1.1$^{+}$ \\
+C-TAEA & 30/30 & 0.299 $\pm$ 0.097$^{\approx}$ & 0.379 $\pm$ 0.065$^{+}$ & 0.885 $\pm$ 0.042$^{+}$ & 26.6 $\pm$ 12.6$^{+}$ \\
+CCMO & 27/30 & 0.126 $\pm$ 0.085$^{+}$ & 0.380 $\pm$ 0.129 ($n$=27)$^{+}$ & 0.905 $\pm$ 0.055 ($n$=27)$^{+}$ & 19.7 $\pm$ 13.7$^{+}$ \\
+AGE-MOEA-II & 9/30 & 0.027 $\pm$ 0.055$^{+}$ & 0.488 $\pm$ 0.189 ($n$=9)$^{+}$ & 0.920 $\pm$ 0.028 ($n$=9)$^{+}$ & 5.1 $\pm$ 10.5$^{+}$ \\
+CMOPSO & 30/30 & 0.194 $\pm$ 0.080$^{+}$ & 0.261 $\pm$ 0.078$^{+}$ & 0.864 $\pm$ 0.052$^{+}$ & 53.7 $\pm$ 17.3$^{+}$ \\
+\hline
+\end{tabular}%
+}
+\end{table}

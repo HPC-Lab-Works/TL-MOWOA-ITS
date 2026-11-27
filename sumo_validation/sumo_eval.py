@@ -10,12 +10,13 @@ the model scenario, 15 min warm-up + 60 min measurement, HBEFA emission model.
 import os, sys, subprocess, tempfile, xml.etree.ElementTree as ET
 import numpy as np
 
-SUMO_HOME = "/usr/local/lib/python3.13/dist-packages/sumo"
+import sumo as _sumo
+SUMO_HOME = os.environ.get("SUMO_HOME", _sumo.SUMO_HOME)
 os.environ["SUMO_HOME"] = SUMO_HOME
 SUMO = f"{SUMO_HOME}/bin/sumo"
 HERE = os.path.dirname(os.path.abspath(__file__))
 NET = os.path.join(HERE, "grid.net.xml")
-sys.path.insert(0, "/home/claude/tlmowoa")
+sys.path.insert(0, os.path.join(HERE, "..", "code"))
 import problem as P
 
 L = "ABCD"

@@ -10,7 +10,8 @@ out_metrics, out_sumo = sys.argv[3], sys.argv[4]
 ORDER = [("TL-MOWOA-v2", "\\textbf{TL-MOWOA (proposed)}"), ("TL-MOWOA", "TL-MOWOA, $a_{max}=2$"),
          ("MOWOA", "MOWOA"), ("MOWOA-a1", "MOWOA, $a_{max}=1$"), ("Hybrid", "Hybrid"),
          ("Hybrid-a1", "Hybrid, $a_{max}=1$"), ("TL", "TL algorithm"), ("NSGA-III", "NSGA-III"),
-         ("GNN", "GCN-EA")]
+         ("GNN", "GCN-EA"), ("C-TAEA", "C-TAEA"), ("CCMO", "CCMO"), ("AGE-MOEA-II", "AGE-MOEA-II"),
+         ("CMOPSO", "CMOPSO")]
 
 
 def cell(d, k, digits=3, ref=False):
@@ -50,7 +51,8 @@ open(out_metrics, "w").write(tab)
 # ------------------------------ SUMO table ------------------------------
 SUMO_ORDER = [("TL-MOWOA-v2", "\\textbf{TL-MOWOA (proposed)}"), ("TL-MOWOA", "TL-MOWOA, $a_{max}=2$"),
               ("MOWOA", "MOWOA"), ("Hybrid", "Hybrid"), ("TL", "TL algorithm"), ("NSGA-III", "NSGA-III"),
-              ("GNN", "GCN-EA"), ("Uniform fixed-time plan", "Uniform fixed-time plan")]
+              ("GNN", "GCN-EA"), ("C-TAEA", "C-TAEA"), ("CCMO", "CCMO"), ("AGE-MOEA-II", "AGE-MOEA-II"),
+              ("CMOPSO", "CMOPSO"), ("Uniform fixed-time plan", "Uniform fixed-time plan")]
 by = {}
 for r in sumo:
     by.setdefault(r["alg"], []).append(r)

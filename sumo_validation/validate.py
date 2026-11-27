@@ -2,7 +2,7 @@
 point in the normalized objective space of the reference front)."""
 import sys, glob, pickle, json, os, numpy as np
 from multiprocessing import Pool
-sys.path.insert(0, "/home/claude/tlmowoa")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "code"))
 import sumo_eval as S
 import problem as P
 

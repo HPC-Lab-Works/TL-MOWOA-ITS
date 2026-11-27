@@ -3,6 +3,7 @@ scipy
 scikit-learn
 torch
 pymoo
+numba
 matplotlib
 eclipse-sumo
 traci

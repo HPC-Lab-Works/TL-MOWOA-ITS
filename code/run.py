@@ -54,6 +54,12 @@ def job(args):
         arch, rec, info = A.run_nsga3(P.TARGET, seed)
     elif alg == "GNN":
         arch, rec, info = A.run_gcn_saea(P.TARGET, seed)
+    elif alg in ("C-TAEA", "AGE-MOEA-II", "CMOPSO"):
+        import sota
+        arch, rec, info = sota.run_pymoo(P.TARGET, seed, alg)
+    elif alg == "CCMO":
+        import sota
+        arch, rec, info = sota.run_ccmo(P.TARGET, seed)
     info = {k: v for k, v in info.items() if k not in ("ev", "p_tl_trace")}
     return {"alg": alg, "seed": seed, "X": arch.X, "F": arch.F, "V": arch.V,
             "evals": rec.evals, "fronts": rec.fronts, "best": np.array(rec.best),
